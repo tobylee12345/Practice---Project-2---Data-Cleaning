@@ -38,9 +38,13 @@ I first by adding a new column called SaleDateCleanned to the table and set it b
 
 By checking the missing value on PropertyAddress, there are a 29 NULL values but the rest of the column has included valuable information. The goal here is to find a way to fill them up. 
 
+<br/>
+
 ![](images/3.png)
 
 By ordering the ParcelID, We can see that the parcelID and Property Address are the same, which means we can fill up the correct property Address by referring to the correspondent ParcelID.
+
+<br/>
 
 ![](images/4.png)
 
@@ -54,6 +58,8 @@ I have used **SELF JOIN** to check if table one ParcelID equals to table two Par
 
 By looking at the Property Address column, we can see that there is only one delimiter separating the street and city. The goal here is to separate them into two columns.
 
+<br/>
+
 ![](images/6.png)
 
 I have Used the **SUBSTRING** function and SQL Server **CHARINDEX()** function to first by finding out the delimiter position value and substringed them by that value. I then added the two new columns named as PropertyAddressCleanned and PropertyCityCleanned by updating the table. 
@@ -65,6 +71,8 @@ I have Used the **SUBSTRING** function and SQL Server **CHARINDEX()** function t
 ![](images/7.png)
 
 Under SoldAsVacant, the value should only be **Yes** or **No**. By using **DISTINCT**, **COUNT** and **GROUP BY** function, we can see that there are 4 different inputs as YES, NO, Y, N. The goal here is to combine them into either yes or no. 
+
+<br/>
 
 ![](images/8.png)
 
@@ -80,6 +88,8 @@ To define a duplicate entry in this dataset, it would means that the row would h
 
 To do this, I first used the **ROW_NUMBER** funtion to give each row a count number and followed with the **PARTITION BY** function to partition out the columns that should be unique. From the diagram above, I have found a duplicate which the row count of 2. 
 
+<br/>
+
 ![](images/10.png)
 
 After that, I created a **CTE** table named as tempCTE which included the query from the above task, and run a **SELECT** statment **FROM** the tempCTE **WHERE row_count > 2** in order to filter out all the duplicate rows. Once we filtered them out, I used **DELETE** function to remove all those duplicates. 
@@ -93,6 +103,8 @@ After that, I created a **CTE** table named as tempCTE which included the query 
 By recalling the tasks I have done above, I have created few new columns named with the name Cleanned, so now I have to delete those old columns which I don't need them anymore. 
 
 A small note is do not do this to the raw data without any confirmation from the stakeholder.  
+
+<br/>
 
 ![](images/12.png)
 
