@@ -18,7 +18,7 @@
 
 - The original dataset was dirty and now has been imported to Microsoft SQL server for Data Cleaning Process. 
 
-- All SQL Query and Comment have been saved under **SQL code** in this directroy.
+- All SQL Query and Comment have been saved under **SQL code** in this repository.
 
 <br/>
 
